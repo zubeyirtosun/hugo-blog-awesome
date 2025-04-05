@@ -2,6 +2,13 @@
     <span class="footer_item"> </span>
     &nbsp;
 
+    {{ define "js" }}
+      <script defer src="{{ "/../../assets/js/music-player.js" | relURL }}"></script>
+    {{ end }}
+    
+
+    {{ partial "music-player.html" . }}
+
     <div class="footer_social-icons">
         {{- partial "socialIcons.html" site.Params.socialIcons -}}
     </div>
@@ -15,4 +22,5 @@
 <a href="#" title="{{ T "footer.go_to_top" }}" id="totop">
     {{ partial "svgs/arrowUp.svg" (dict "height" 48 "width" 48) . }}
 </a>
+
 {{- end -}}
